@@ -189,6 +189,8 @@ sudo dnf remove -y gnome-classic-session
 sudo dnf remove -y gnome-maps
 sudo dnf remove -y gnome-tour
 sudo dnf remove -y mediawriter
+sudo dnf remove -y ibus-hangul
+sudo dnf remove -y libpinyin
 sudo dnf remove -y abrt
 } &> /dev/null
 echo "Готово"
