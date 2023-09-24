@@ -8,4 +8,4 @@ sudo echo "# Должно получится так > compress=zstd:1,defaults,n
 sudo echo "# Сохраните файл и закройте текстовый редактор!" >> /etc/fstab
 sudo gnome-text-editor /etc/fstab
 echo "Надеюсь ты все сделал правильно"
-sudo sh ./data/back.sh
+sh ./data/back.sh

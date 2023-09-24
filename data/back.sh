@@ -6,8 +6,8 @@ echo -e "-----------------------------------\033[0m"
 echo -ne "Выберите пункт:"
 read item
 case "$item" in
-    8|8) sudo reboot
+    8|8) reboot
         ;;
-    9|9) sudo sh ./start.sh
+    9|9) sh ./start.sh
         ;;
 esac

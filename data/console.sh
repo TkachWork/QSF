@@ -22,7 +22,7 @@ case "$item" in
 	 echo "Готово"
 	 echo
 	 echo "Успех!"
-    	 sudo sh ./data/back.sh
+    	 sh ./data/back.sh
         ;;
     2|2) echo "Откройте Консоль для полной замены устаревшего Терминала!"
 	 echo

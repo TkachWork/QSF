@@ -10,5 +10,4 @@ sudo dnf group upgrade --with-optional Multimedia
 echo "Готово"
 echo
 echo "Успех!"
-sudo sh ./data/back.sh
-
+sh ./data/back.sh

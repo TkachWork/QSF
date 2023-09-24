@@ -5,7 +5,7 @@ echo -e ' / __ \ / ____|  ____|'
 echo -e '| |  | | (___ | |__   '
 echo -e '| |  | |\___ \|  __|  '
 echo -e '| |__| |____) | |         TkachWork'
-echo -e ' \___\_\_____/|_|         (preview)'
+echo -e ' \___\_\_____/|_|       (v24.09.23)'
 echo -e "-----------------------------------\033[0m"
 echo -e "(1)Ускорение SSD"
 echo -e "(2)Обновление системы"
@@ -17,16 +17,16 @@ echo -e "\033[34m-----------------------------------\033[0m"
 echo -n "Выберите пункт:"
 read item
 case "$item" in
-    1|1) sudo sh ./data/ssd.sh
+    1|1) sh ./data/ssd.sh
         ;;
-    2|2) sudo sh ./data/update.sh
+    2|2) sh ./data/update.sh
         ;;
-    3|3) sudo sh ./data/codec.sh
+    3|3) sh ./data/codec.sh
         ;;
-    4|4) sudo sh ./data/nvidia.sh
+    4|4) sh ./data/nvidia.sh
         ;;
-    5|5) sudo sh ./data/console.sh
+    5|5) sh ./data/console.sh
         ;;
-    6|6) sudo sh ./data/apps.sh
+    6|6) sh ./data/apps.sh
         ;;
 esac

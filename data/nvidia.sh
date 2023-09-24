@@ -8,4 +8,4 @@ sudo dnf install -y gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nv
 echo "Готово"
 echo
 echo "Успех!"
-sudo sh ./data/back.sh
+sh ./data/back.sh
