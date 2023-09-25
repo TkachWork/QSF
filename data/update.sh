@@ -1,8 +1,8 @@
 #!/bin/bash
 echo -e "\033[34m----------------------------------"
-echo -e "Обновление системы"
+echo -e "System update"
 echo -e "-----------------------------------\033[0m"
-echo "Настройка репозиториев...";{
+echo "Configuring repositories...";{
 sudo rm /etc/yum.repos.d/_copr\:copr.fedorainfracloud.org\:phracek\:PyCharm.repo
 sudo rm /etc/yum.repos.d/google-chrome.repo
 sudo rm /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
@@ -13,17 +13,17 @@ flatpak remote-delete fedora-testing
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 } &> /dev/null
-echo "Готово"
+echo "Done"
 echo
-echo "Обновление системы...";{ 
+echo "System update...";{ 
 sudo dnf update --refresh -y
 } &> /dev/null
-echo "Готово"
+echo "Done"
 echo
-echo "Очистка временных файлов...";{ 
+echo "Clearing temporary files...";{ 
 sudo dnf autoremove -y && dnf clean all -y
 } &> /dev/null
-echo "Готово"
+echo "Done"
 echo
-echo "Успех!"
+echo "Success!"
 sh ./data/back.sh

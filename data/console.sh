@@ -1,32 +1,32 @@
 #!/bin/bash
 echo -e "\033[34m----------------------------------"
-echo -e "Терминал >>> Консоль"
+echo -e "Terminal >>> Console "
 echo -e "-----------------------------------\033[0m"
-echo "Установка консоли...";{
+echo "Console installation...";{
 sudo dnf install -y gnome-console
 } &> /dev/null
-echo "Готово"
+echo "Done"
 echo
-echo "Для завершения этого пункта просим вас открыть данный скрипт в новой Консоли!"
+echo "To complete this item, we ask you to open this script in a new console!"
 echo "-----------------------------------"
-echo "Вы сейчас в Консоли?"
-echo "(1)Да"
-echo "(2)Нет"
+echo "Are you sitting in the Console?"
+echo "(1)Yes"
+echo "(2)No"
 echo "-----------------------------------"
-echo -n "Выберите пункт:"
+echo -n "Select the item:"
 read item
 case "$item" in
-    1|1) echo "Удаление терминала...";{
+    1|1) echo "Terminal deletion...";{
          sudo dnf remove -y gnome-terminal
     	 } &> /dev/null
-	 echo "Готово"
+	 echo "Done"
 	 echo
-	 echo "Успех!"
+	 echo "Success!"
     	 sh ./data/back.sh
         ;;
-    2|2) echo "Откройте Консоль для полной замены устаревшего Терминала!"
+    2|2) echo "Open the console for a full-scale replacement of the obsolete terminal!"
 	 echo
-	 echo -n "Нажмите Enter... и закройте Терминал раз и навсегда!"
+	 echo -n "Press Enter... and close the Terminal once and for all!"
 	 read enter
 	 exit
         ;;
