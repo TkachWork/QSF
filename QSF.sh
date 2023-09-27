@@ -194,7 +194,7 @@ flatpak install -y flathub org.gnome.Calendar
 } &> /dev/null
 echo "Done"
 echo
-echo "Contacts..";{
+echo "Contacts...";{
 sudo dnf remove -y gnome-contacts
 flatpak install -y flathub org.gnome.Contacts
 } &> /dev/null
@@ -248,7 +248,7 @@ flatpak install -y flathub org.gnome.font-viewer
 } &> /dev/null
 echo "Done"
 echo
-echo "Characters....";{
+echo "Characters...";{
 sudo dnf remove -y gnome-characters
 flatpak install -y flathub org.gnome.Characters
 } &> /dev/null
