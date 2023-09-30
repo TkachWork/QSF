@@ -1,5 +1,6 @@
 #!/bin/bash
-langset="ru"
+langset="en"
+author=("TkachWork")
 version=("preview")
 
 #DONE/SUCCESS/CLEARING LANGUAGE
@@ -180,8 +181,8 @@ echo -e "\033[34m-----------------------------------"
 echo -e "  ____   _____ ______                     "
 echo -e " / __ \ / ____|  ____|                    "
 echo -e "| |  | | (___ | |__                       "
-echo -e "| |  | |\___ \|  __|        ${version}    "
-echo -e "| |__| |____) | |         TkachWork       "
+echo -e "| |  | |\___ \|  __|      ${author}       "
+echo -e "| |__| |____) | |           ${version}    "
 echo -e " \___\_\_____/|_|           ${language[0]}"
 echo -e "-----------------------------------\033[0m"
 echo -e "(1)${update[0]}"
