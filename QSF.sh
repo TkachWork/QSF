@@ -1,7 +1,6 @@
 #!/bin/bash
 langset="en"
-author=("TkachWork")
-version=("preview")
+verset=("preview")
 
 #DONE/SUCCESS/CLEARING LANGUAGE
 clear_process_ru=("Очистка временных файлов..."); clear_process_en=("Clearing temporary files...")
@@ -17,11 +16,8 @@ success="success_$langset[@]"; success=("${!success}")
 select_ru=("Выберите пункт:"); select_en=("Select item:")
 select="select_$langset[@]"; select=("${!select}")
 
-reboot_ru=("Перезагрузка"); reboot_en=("Reboot")
+reboot_ru=("Перезагрузка" "Назад"); reboot_en=("Back")
 reboot="reboot_$langset[@]"; reboot=("${!reboot}")
-
-back_ru=("Назад"); back_en=("Back")
-back="back_$langset[@]"; back=("${!back}")
 
 #MENU LANGUAGE
 update_ru=("Обновление системы"); update_en=("System update")
@@ -42,14 +38,14 @@ apps="apps_$langset[@]"; apps=("${!apps}")
 switch_ru=("Изменить язык"); switch_en=("Switch language")
 switch="switch_$langset[@]"; switch=("${!switch}")
 
+version_ru=("Версия: ${verset}"); version_en=("Version: ${verset}")
+version="version_$langset[@]"; version=("${!version}")
+
 language_ru=("Русский"); language_en=("English")
 language="language_$langset[@]"; language=("${!language}")
 
 #UPDATE LANGUAGE
-repos_process_ru=("Настройка репозиториев..."); repos_process_en=("Configuring repositories...")
-repos_process="repos_process_$langset[@]"; repos_process=("${!repos_process}")
-
-update_process_ru=("Обновление системы..."); update_process_en=("System update...")
+update_process_ru=("Настройка репозиториев..." "Обновление системы..."); update_process_en=("Configuring repositories..." "System update...")
 update_process="update_process_$langset[@]"; update_process=("${!update_process}")
 
 #CODECS LANGUAGE
@@ -60,39 +56,27 @@ codecs_process="codecs_process_$langset[@]"; codecs_process=("${!codecs_process}
 nvidia_process_ru=("Установка драйверов..."); nvidia_process_en=("Installing drivers...")
 nvidia_process="nvidia_process_$langset[@]"; nvidia_process=("${!nvidia_process}")
 
-nvidia_latest_ru=("Последняя версия"); nvidia_latest_en=("Latest version")
+nvidia_latest_ru=("Последняя версия" "Последняя версия..."); nvidia_latest_en=("Latest version" "Latest version...")
 nvidia_latest="nvidia_latest_$langset[@]"; nvidia_latest=("${!nvidia_latest}")
 
-nvidia_470_ru=("Версия 470"); nvidia_470_en=("Version 470")
+nvidia_470_ru=("Версия 470" "Версия 470..."); nvidia_470_en=("Version 470" "Version 470...")
 nvidia_470="nvidia_470_$langset[@]"; nvidia_470=("${!nvidia_470}")
 
 nvidia_select_ru=("Выберите версию:"); nvidia_select_en=("Select version:")
 nvidia_select="nvidia_select_$langset[@]"; nvidia_select=("${!nvidia_select}")
 
-nvidia_latest_process_ru=("Последняя версия..."); nvidia_latest_process_en=("Latest version...")
-nvidia_latest_process="nvidia_latest_process_$langset[@]"; nvidia_latest_process=("${!nvidia_latest_process}")
-
-nvidia_470_process_ru=("Версия 470..."); nvidia_470_process_en=("Version 470...")
-nvidia_470_process="nvidia_470_process_$langset[@]"; nvidia_470_process=("${!nvidia_470_process}")
-
 #CONSOLE LANGUAGE
 console_process_ru=("Установка консоли..."); console_process_en=("Console installation...")
 console_process="console_process_$langset[@]"; console_process=("${!console_process}")
 
-console_message_one_ru=("Для завершения этого пункта просим вас открыть данный скрипт в новой Консоли!"); console_message_one_en=("To complete this item, we ask you to open this script in a new console!")
-console_message_one="console_message_one_$langset[@]"; console_message_one=("${!console_message_one}")
+console_message_ru=("Для завершения этого пункта просим вас открыть данный скрипт в новой Консоли!" "Откройте Консоль для полной замены устаревшего Терминала!"); console_message_en=("To complete this item, we ask you to open this script in a new console!" "Open the console for a full-scale replacement of the obsolete terminal!")
+console_message="console_message_$langset[@]"; console_message=("${!console_message}")
 
 console_select_ru=("Вы сейчас в Консоли?"); console_select_en=("Are you in the Console now?")
 console_select="console_select_$langset[@]"; console_select=("${!console_select}")
 
-console_yes_ru=("Да"); console_yes_en=("Yes")
-console_yes="console_yes_$langset[@]"; console_yes=("${!console_yes}")
-
-console_no_ru=("Нет"); console_no_en=("No")
-console_no="console_no_$langset[@]"; console_no=("${!console_no}")
-
-console_message_two_ru=("Откройте Консоль для полной замены устаревшего Терминала!"); console_message_two_en=("Open the console for a full-scale replacement of the obsolete terminal!")
-console_message_two="console_message_two_$langset[@]"; console_message_two=("${!console_message_two}")
+console_question_ru=("Да" "Нет"); console_question_en=("Yes" "No")
+console_question="console_question_$langset[@]"; console_question=("${!console_question}")
 
 terminal_ru=("Удаление терминала..."); terminal_en=("Removing Terminal...")
 terminal="terminal_$langset[@]"; terminal=("${!terminal}")
@@ -177,31 +161,33 @@ remove_other_ru=("Удаление сторонних приложений...");
 remove_other="remove_other_$langset[@]"; remove_other=("${!remove_other}")
 
 #MENU CODE
-echo -e "\033[34m-----------------------------------"
-echo -e "  ____   _____ ______                     "
-echo -e " / __ \ / ____|  ____|                    "
-echo -e "| |  | | (___ | |__                       "
-echo -e "| |  | |\___ \|  __|      ${author}       "
-echo -e "| |__| |____) | |           ${version}    "
-echo -e " \___\_\_____/|_|           ${language[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "\033[34m----------TkachWork----------"
+echo -e "     ____   _____ ______     "
+echo -e "    / __ \ / ____|  ____|    "
+echo -e "   | |  | | (___ | |__       "
+echo -e "   | |  | |\___ \|  __|      "
+echo -e "   | |__| |____) | |         "
+echo -e "    \___\_\_____/|_|         "
+echo -e "-----------------------------"
+echo -e "${version[0]} | ${language[0]}"
+echo -e "-----------------------------\033[0m"
 echo -e "(1)${update[0]}"
 echo -e "(2)${codecs[0]}"
 echo -e "(3)${nvidia[0]}"
 echo -e "(4)${console[0]}"
 echo -e "(5)${apps[0]}"
 echo -e "(6)${switch[0]}"
-echo -e "\033[34m-----------------------------------\033[0m"
+echo -e "\033[34m-----------------------------\033[0m"
 echo -n "${select[0]}"
 read item
 case "$item" in
 
 #UPDATE CODE
 1|1)
-echo -e "\033[34m-----------------------------------"
+echo -e "\033[34m-----------------------------"
 echo -e "${update[0]}"
-echo -e "-----------------------------------\033[0m"
-echo "${repos_process[0]}";{
+echo -e "-----------------------------\033[0m"
+echo "${update_process[0]}";{
 sudo rm /etc/yum.repos.d/_copr\:copr.fedorainfracloud.org\:phracek\:PyCharm.repo
 sudo rm /etc/yum.repos.d/google-chrome.repo
 sudo rm /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
@@ -214,7 +200,7 @@ sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 } &> /dev/null
 echo "${done[0]}"
 echo
-echo "${update_process[0]}...";{ 
+echo "${update_process[1]}...";{ 
 sudo dnf update --refresh -y
 } &> /dev/null
 echo "${done[0]}"
@@ -225,10 +211,10 @@ sudo dnf autoremove -y && dnf clean all -y
 echo "${done[0]}"
 echo
 echo "${success[0]}"
-echo -e "\033[33m-----------------------------------"
+echo -e "\033[33m-----------------------------"
 echo -e "(8)${reboot[0]}"
-echo -e "(9)${back[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "(9)${reboot[1]}"
+echo -e "-----------------------------\033[0m"
 echo -ne "${select[0]}"
 read item
 case "$item" in
@@ -241,9 +227,9 @@ esac
 
 #CODECS CODE
 2|2)
-echo -e "\033[34m-----------------------------------"
+echo -e "\033[34m-----------------------------"
 echo -e "${codecs[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "-----------------------------\033[0m"
 echo "${codecs_process[0]}";{
 sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install -y lame\* --exclude=lame-devel
@@ -252,10 +238,10 @@ sudo dnf group upgrade --with-optional Multimedia
 echo "${done[0]}"
 echo
 echo "${success[0]}"
-echo -e "\033[33m-----------------------------------"
+echo -e "\033[33m-----------------------------"
 echo -e "(8)${reboot[0]}"
-echo -e "(9)${back[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "(9)${reboot[1]}"
+echo -e "-----------------------------\033[0m"
 echo -ne "${select[0]}"
 read item
 case "$item" in
@@ -268,24 +254,24 @@ esac
 
 #NVIDIA CODE
 3|3)
-echo -e "\033[34m-----------------------------------"
+echo -e "\033[34m-----------------------------"
 echo -e "${nvidia[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "-----------------------------\033[0m"
 echo "${nvidia_process[0]}"
 echo "(1)${nvidia_latest[0]}"
 echo "(2)${nvidia_470[0]}"
-echo "-----------------------------------"
+echo "-----------------------------"
 echo -n "${nvidia_select[0]}"
 read item
 case "$item" in
 1|1) 
-echo "${nvidia_latest_process[0]}";{
+echo "${nvidia_latest[1]}";{
 sudo dnf install -y akmod-nvidia
 } &> /dev/null
 echo "${done[0]}"
 ;;
 2|2) 
-echo "${nvidia_latest_process[0]}";{
+echo "${nvidia_470[1]}";{
 sudo dnf install -y akmod-nvidia-470xx
 } &> /dev/null
 echo "${done[0]}"
@@ -293,10 +279,10 @@ echo "${done[0]}"
 esac
 echo
 echo "${success[0]}"
-echo -e "\033[33m-----------------------------------"
+echo -e "\033[33m-----------------------------"
 echo -e "(8)${reboot[0]}"
-echo -e "(9)${back[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "(9)${reboot[1]}"
+echo -e "-----------------------------\033[0m"
 echo -ne "${select[0]}"
 read item
 case "$item" in
@@ -309,20 +295,20 @@ esac
 
 #CONSOLE CODE
 4|4)
-echo -e "\033[34m-----------------------------------"
+echo -e "\033[34m-----------------------------"
 echo -e "${console[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "-----------------------------\033[0m"
 echo "${console_process[0]}";{
 sudo dnf install -y gnome-console
 } &> /dev/null
 echo "${done[0]}"
 echo
-echo "${console_message_one[0]}"
-echo "-----------------------------------"
+echo "${console_message[0]}"
+echo "-----------------------------"
 echo "${console_select[0]}"
-echo "(1)${console_yes[0]}"
-echo "(2)${console_no[0]}"
-echo "-----------------------------------"
+echo "(1)${console_question[0]}"
+echo "(2)${console_question[1]}"
+echo "-----------------------------"
 echo -n "${select[0]}"
 read item
 case "$item" in
@@ -333,10 +319,10 @@ sudo dnf remove -y gnome-terminal
 echo "${done[0]}"
 echo
 echo "${success[0]}"
-echo -e "\033[33m-----------------------------------"
+echo -e "\033[33m-----------------------------"
 echo -e "(8)${reboot[0]}"
-echo -e "(9)${back[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "(9)${reboot[1]}"
+echo -e "-----------------------------\033[0m"
 echo -ne "${select[0]}"
 read item
 case "$item" in
@@ -347,7 +333,7 @@ case "$item" in
 esac
 ;;
 2|2) 
-echo "${console_message_two}"
+echo "${console_message[1]}"
 echo
 echo -n "${terminal_end[0]}"
 read enter
@@ -358,9 +344,9 @@ esac
 
 #APPS CODE
 5|5)
-echo -e "\033[34m-----------------------------------"
+echo -e "\033[34m-----------------------------"
 echo -e "${apps[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "-----------------------------\033[0m"
 echo "${clocks[0]}";{
 sudo dnf remove -y gnome-clocks
 flatpak install -y flathub org.gnome.clocks
@@ -451,7 +437,7 @@ sudo dnf remove -y rhythmbox
 echo "(1)Amberol"
 echo "(2)Gnome Music"
 echo "(3)Rhythmbox"
-echo "-----------------------------------"
+echo "-----------------------------"
 echo -n "${select[0]}"
 read item
 case "$item" in
@@ -481,7 +467,7 @@ sudo dnf remove -y totem
 echo "(1)Celluloid"
 echo "(2)Gnome Videos"
 echo "(3)Daikhan"
-echo "-----------------------------------"
+echo "-----------------------------"
 echo -n "${select[0]}"
 read item
 case "$item" in
@@ -529,7 +515,7 @@ sudo dnf remove -y firefox
 echo "(1)Mozilla Firefox"
 echo "(2)Google Chrome"
 echo "(3)Yandex Browser"
-echo "-----------------------------------"
+echo "-----------------------------"
 echo -n "${select[0]}"
 read item
 case "$item" in
@@ -588,7 +574,7 @@ echo "${bittorrent[0]}"
 echo "(1)Fragments"
 echo "(2)Transmission"
 echo "(3)qBittorrent"
-echo "-----------------------------------"
+echo "-----------------------------"
 echo -n "${select[0]}"
 read item
 case "$item" in
@@ -655,10 +641,10 @@ sudo dnf autoremove -y && dnf clean all -y
 echo "${done[0]}"
 echo
 echo "${success[0]}"
-echo -e "\033[33m-----------------------------------"
+echo -e "\033[33m-----------------------------"
 echo -e "(8)${reboot[0]}"
-echo -e "(9)${back[0]}"
-echo -e "-----------------------------------\033[0m"
+echo -e "(9)${reboot[1]}"
+echo -e "-----------------------------\033[0m"
 echo -ne "${select[0]}"
 read item
 case "$item" in
