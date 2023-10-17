@@ -23,9 +23,6 @@ reboot="reboot_$langset[@]"; reboot=("${!reboot}")
 update_ru=("Обновление системы"); update_en=("System update")
 update="update_$langset[@]"; update=("${!update}")
 
-codecs_ru=("Мультимедийные кодеки"); codecs_en=("Multimedia codecs")
-codecs="codecs_$langset[@]"; codecs=("${!codecs}")
-
 nvidia_ru=("Драйверы NVIDIA"); nvidia_en=("NVIDIA drivers")
 nvidia="nvidia_$langset[@]"; nvidia=("${!nvidia}")
 
@@ -47,10 +44,6 @@ language="language_$langset[@]"; language=("${!language}")
 #UPDATE LANGUAGE
 update_process_ru=("Настройка репозиториев..." "Обновление системы..."); update_process_en=("Configuring repositories..." "System update...")
 update_process="update_process_$langset[@]"; update_process=("${!update_process}")
-
-#CODECS LANGUAGE
-codecs_process_ru=("Установка кодеков..."); codecs_process_en=("Installing codecs...")
-codecs_process="codecs_process_$langset[@]"; codecs_process=("${!codecs_process}")
 
 #NVIDIA LANGUAGE
 nvidia_process_ru=("Установка драйверов..."); nvidia_process_en=("Installing drivers...")
@@ -136,6 +129,9 @@ video="video_$langset[@]"; video=("${!video}")
 system_monitor_ru=("Системный монитор..."); system_monitor_en=("System monitor...")
 system_monitor="system_monitor_$langset[@]"; system_monitor=("${!system_monitor}")
 
+resources_ru=("Ресурсы" "Ресурсы..."); resources_en=("Resources" "Resources...")
+resources="resources_$langset[@]"; resources=("${!resources}")
+
 boxes_ru=("Боксы..."); boxes_en=("Boxes...")
 boxes="boxes_$langset[@]"; boxes=("${!boxes}")
 
@@ -172,11 +168,10 @@ echo -e "-----------------------------"
 echo -e "${version[0]} | ${language[0]}"
 echo -e "-----------------------------\033[0m"
 echo -e "(1)${update[0]}"
-echo -e "(2)${codecs[0]}"
-echo -e "(3)${nvidia[0]}"
-echo -e "(4)${console[0]}"
-echo -e "(5)${apps[0]}"
-echo -e "(6)${switch[0]}"
+echo -e "(2)${nvidia[0]}"
+echo -e "(3)${console[0]}"
+echo -e "(4)${apps[0]}"
+echo -e "(5)${switch[0]}"
 echo -e "\033[34m-----------------------------\033[0m"
 echo -n "${select[0]}"
 read item
@@ -225,35 +220,8 @@ case "$item" in
 esac
 ;;
 
-#CODECS CODE
-2|2)
-echo -e "\033[34m-----------------------------"
-echo -e "${codecs[0]}"
-echo -e "-----------------------------\033[0m"
-echo "${codecs_process[0]}";{
-sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-sudo dnf install -y lame\* --exclude=lame-devel
-sudo dnf group upgrade --with-optional Multimedia
-} &> /dev/null
-echo "${done[0]}"
-echo
-echo "${success[0]}"
-echo -e "\033[33m-----------------------------"
-echo -e "(8)${reboot[0]}"
-echo -e "(9)${reboot[1]}"
-echo -e "-----------------------------\033[0m"
-echo -ne "${select[0]}"
-read item
-case "$item" in
-8|8) reboot
-;;
-9|9) sh ./QSF.sh
-;;
-esac
-;;
-
 #NVIDIA CODE
-3|3)
+2|2)
 echo -e "\033[34m-----------------------------"
 echo -e "${nvidia[0]}"
 echo -e "-----------------------------\033[0m"
@@ -294,7 +262,7 @@ esac
 ;;
 
 #CONSOLE CODE
-4|4)
+3|3)
 echo -e "\033[34m-----------------------------"
 echo -e "${console[0]}"
 echo -e "-----------------------------\033[0m"
@@ -343,7 +311,7 @@ esac
 ;;
 
 #APPS CODE
-5|5)
+4|4)
 echo -e "\033[34m-----------------------------"
 echo -e "${apps[0]}"
 echo -e "-----------------------------\033[0m"
@@ -493,9 +461,26 @@ esac
 echo
 echo "${system_monitor[0]}";{
 sudo dnf remove -y gnome-system-monitor
+} &> /dev/null
+echo "(1)${resources[0]}"
+echo "(2)Mission Center"
+echo "-----------------------------"
+echo -n "${select[0]}"
+read item
+case "$item" in
+1|1) 
+echo "${resources[1]}";{
+flatpak install -y flathub net.nokyan.Resources
+} &> /dev/null
+echo "${done[0]}"
+;;
+2|2) 
+echo "Mission Center...";{
 flatpak install -y flathub io.missioncenter.MissionCenter
 } &> /dev/null
 echo "${done[0]}"
+;;
+esac
 echo
 echo "${boxes[0]}";{
 sudo dnf remove -y gnome-boxes
@@ -656,7 +641,7 @@ esac
 ;;
 
 #SWITCH CODE
-6|6)
+5|5)
 if [ $langset = "en" ]; then
 sed -i '2s/"en"/"ru"/g' QSF.sh
 fi
