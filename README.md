@@ -4,18 +4,18 @@
 Скрипт, который собрал в себе основные этапы настройки Fedora Workstation.    
 А так же сэкономить время на настройки Fedora Linux.  
 Основные функции:
-- Установка мультимедийных кодеков
+- Обновление системы в один клик
 - Установка проприетарных драйверов NVIDIA
 - Обновление устаревшего Терминала на более современную Консоль
 - Обновление системных приложений RPM на более современный Flatpak
 #### Поддерживаемые языки: Русский, Английский
 
 ### English
-A script that contains the main stages of setting up Fedora Workstation.  
+A script that contains the main stages of setting up Fedora Workstation.
 And also save time on setting up Fedora Linux.
 Main functions:
-- Installing multimedia codecs
-- Installing proprietary NVIDIA drivers
+- System update in one click
+- Installation of proprietary NVIDIA drivers
 - Updating an outdated Terminal to a more modern Console
 - Updating RPM system applications to a more modern Flatpak
 #### Supported languages: Russian, English
