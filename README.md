@@ -1,5 +1,5 @@
 # QSF (Quick Setting Fedora)
-![QSFLogo](https://github.com/TkachWork/QSF/assets/79490432/bb5a795b-41c5-4a83-bc89-7eb05ec23a54)
+![QSF_Logo](https://github.com/TkachWork/QSF/assets/79490432/b96f46f5-729e-4f5a-898e-0a8720cf47c3)
 ### Русский
 Скрипт, который собрал в себе основные этапы настройки Fedora Workstation.    
 А так же сэкономить время на настройки Fedora Linux.  
